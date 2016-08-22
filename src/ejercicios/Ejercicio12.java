@@ -28,33 +28,106 @@ public class Ejercicio12 extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtCantp = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtNd = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtTotp = new javax.swing.JTextField();
+        cmdCalcular = new javax.swing.JButton();
+        cmdBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 322, Short.MAX_VALUE)
-        );
+        jPanel1.setBackground(new java.awt.Color(51, 255, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Cooper Black", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 0, 102));
+        jLabel1.setText("   VIDEO TIENDA");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 200, 50));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setText("   Cantidad de películas alquiladas:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 220, 40));
+
+        txtCantp.setBackground(new java.awt.Color(153, 255, 204));
+        txtCantp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCantpKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtCantp, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 50, 30));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setText("   Numero de días:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 140, 30));
+
+        txtNd.setBackground(new java.awt.Color(153, 255, 204));
+        txtNd.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNdKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtNd, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 50, 30));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setText("   TOTAL A PAGAR:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 130, 30));
+
+        txtTotp.setBackground(new java.awt.Color(153, 255, 204));
+        txtTotp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTotpKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtTotp, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 130, 30));
+
+        cmdCalcular.setBackground(new java.awt.Color(255, 204, 153));
+        cmdCalcular.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 100, 40));
+
+        cmdBorrar.setBackground(new java.awt.Color(255, 204, 153));
+        cmdBorrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cmdBorrar.setText("Borrar");
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 90, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtCantpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantpKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantpKeyTyped
+
+    private void txtNdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNdKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNdKeyTyped
+
+    private void txtTotpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTotpKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTotpKeyTyped
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmdCalcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,6 +165,15 @@ public class Ejercicio12 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtCantp;
+    private javax.swing.JTextField txtNd;
+    private javax.swing.JTextField txtTotp;
     // End of variables declaration//GEN-END:variables
 }
