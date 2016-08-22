@@ -5,6 +5,8 @@
  */
 package ejercicios;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author SERVIDOR
@@ -76,6 +78,7 @@ public class Ejercicio12 extends javax.swing.JFrame {
         jLabel4.setText("   TOTAL A PAGAR:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 130, 30));
 
+        txtTotp.setEditable(false);
         txtTotp.setBackground(new java.awt.Color(153, 255, 204));
         txtTotp.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -97,6 +100,11 @@ public class Ejercicio12 extends javax.swing.JFrame {
         cmdBorrar.setBackground(new java.awt.Color(255, 204, 153));
         cmdBorrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 90, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -114,20 +122,63 @@ public class Ejercicio12 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCantpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCantpKeyTyped
-        // TODO add your handling code here:
+         char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
     }//GEN-LAST:event_txtCantpKeyTyped
 
     private void txtNdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNdKeyTyped
-        // TODO add your handling code here:
+        char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume();    
+          } 
     }//GEN-LAST:event_txtNdKeyTyped
 
     private void txtTotpKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTotpKeyTyped
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_txtTotpKeyTyped
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
-        // TODO add your handling code here:
+        String totlp;
+        double nd,np,tp,tp2=0;
+        
+        if (txtNd.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite el numero de días","Error", JOptionPane.ERROR_MESSAGE);
+            txtNd.requestFocusInWindow();
+        }
+        else if (txtCantp.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Digite la cantidade peliculas","Error",JOptionPane.ERROR_MESSAGE);
+            txtCantp.requestFocusInWindow();
+        }
+        else{
+            nd=Double.parseDouble(txtNd.getText());
+            np=Double.parseDouble(txtCantp.getText());
+            tp=(np-1);
+            tp2=(tp*1500*nd);
+        }
+        totlp=String.valueOf(tp2);
+        txtTotp.setText(totlp);
+        
+        
     }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        txtCantp.setText("");
+        txtNd.setText("");
+        txtTotp.setText("");
+        
+        txtNd.requestFocusInWindow();
+        txtCantp.requestFocusInWindow();
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
